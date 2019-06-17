@@ -1,12 +1,3 @@
-
-
-export LD_LIBRARY_PATH="/home/cmb-07/sn1/mingyous/anaconda2/lib64:$LD_LIBRARY_PATH"
-export PATH="/home/cmb-07/sn1/mingyous/anaconda2/bin:$PATH"
-source activate deeplift
-
-cd  /home/cmb-07/sn1/mingyous/oilpalm/newdata/
-
-
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
@@ -57,10 +48,6 @@ n_target = 1
 X = tf.placeholder(dtype=tf.float32, shape=[None, input_dim])
 Y = tf.placeholder(dtype=tf.float32, shape=[None])
 
-#xavier_initializer
-#https://adventuresinmachinelearning.com/weight-initialization-tutorial-tensorflow/
-#regularization
-#http://laid.delanover.com/difference-between-l1-and-l2-regularization-implementation-and-visualization-in-tensorflow/
 
 # Layer 1: Variables for hidden weights and biases
 W_hidden_1=tf.get_variable("W1", shape=[input_dim, n_neurons_1],
