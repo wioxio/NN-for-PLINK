@@ -3,18 +3,18 @@
 **Specify hidden and output layers**
 ```
 weights={
-    'W_hidden_1': tf.get_variable("W1", shape=[input_dim, n_neurons_1],initializer=tf.contrib.layers.xavier_initializer()),
-    'W_hidden_2': tf.get_variable("W2", shape=[n_neurons_1, n_neurons_2],initializer=tf.contrib.layers.xavier_initializer()),
-    'W_out': tf.get_variable("W3", shape=[n_neurons_2, n_target],initializer=tf.contrib.layers.xavier_initializer())
+    'W_hidden_1': tf.get_variable("W1", shape=#your shape,initializer=tf.contrib.layers.xavier_initializer()),
+    'W_hidden_2': tf.get_variable("W2", shape=#your shape,initializer=tf.contrib.layers.xavier_initializer()),
+    'W_out': tf.get_variable("W3", shape=#your shape,initializer=tf.contrib.layers.xavier_initializer())
 }
 
 biases={
 
-'b1' : tf.Variable(tf.random_normal([n_neurons_1])),
+'b1' : tf.Variable(tf.random_normal([#your dim])),
 
-'b2' : tf.Variable(tf.random_normal([n_neurons_2])),
+'b2' : tf.Variable(tf.random_normal([#your dim])),
 
-'b3' : tf.Variable(tf.random_normal([n_target]))
+'b3' : tf.Variable(tf.random_normal([#your dim]))
 
 }
 ```
@@ -37,7 +37,7 @@ def run_NN(input_x, W, B):
 ```
 out=run_NN(X,weights, biases)
 
-#L2
+#cost 
 cost=tf.reduce_mean(tf.squared_difference(out, Y))
 
 # Optimizer
