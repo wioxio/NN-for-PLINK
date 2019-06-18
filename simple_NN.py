@@ -12,7 +12,7 @@ merged=pd.merge(pheno,data,on='IID')
 temp2=data.columns.values
 chr3=np.flatnonzero(np.array([i.startswith('3:') for i in temp2])!=False)
 
-data=merged.iloc[:,chr3]
+data=merged.iloc[:,chr]
 pheno=merged.iloc[:,1]
 
 data=data.values #numpy format array
@@ -50,18 +50,18 @@ Y = tf.placeholder(dtype=tf.float32, shape=[None])
 
 
 weights={
-    'W_hidden_1': tf.get_variable("W1", shape=[input_dim, n_neurons_1],initializer=tf.contrib.layers.xavier_initializer()),
-    'W_hidden_2': tf.get_variable("W2", shape=[n_neurons_1, n_neurons_2],initializer=tf.contrib.layers.xavier_initializer()),
-    'W_out': tf.get_variable("W3", shape=[n_neurons_2, n_target],initializer=tf.contrib.layers.xavier_initializer())
+    'W_hidden_1': tf.get_variable("W1", shape=[#your shape],initializer=tf.contrib.layers.xavier_initializer()),
+    'W_hidden_2': tf.get_variable("W2", shape=[#your shape],initializer=tf.contrib.layers.xavier_initializer()),
+    'W_out': tf.get_variable("W3", shape=[#your shape],initializer=tf.contrib.layers.xavier_initializer())
 }
 
 biases={
 
-'b1' : tf.Variable(tf.random_normal([n_neurons_1])),
+'b1' : tf.Variable(tf.random_normal([#your dim])),
 
-'b2' : tf.Variable(tf.random_normal([n_neurons_2])),
+'b2' : tf.Variable(tf.random_normal([#your dim])),
 
-'b3' : tf.Variable(tf.random_normal([n_target]))
+'b3' : tf.Variable(tf.random_normal([#your dim]))
 
 }
 
